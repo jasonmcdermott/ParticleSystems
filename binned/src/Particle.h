@@ -7,14 +7,11 @@ public:
     float x, y;
     float xv, yv;
     float xf, yf;
-    float c,a;
     
     Particle(float _x = 0, float _y = 0,
              float _xv = 0, float _yv = 0) :
     x(_x), y(_y),
     xv(_xv), yv(_yv) {
-        c = ofRandom(50,255);
-        a = ofRandom(50,255);
     }
     void updatePosition(float timeStep) {
         // f = ma, m = 1, f = a, v = int(a)
@@ -60,7 +57,6 @@ public:
         yf = yf - yv * damping;
     }
     void draw() {
-        ofSetColor(c,a);
         glVertex2f(x, y);
     }
 };
